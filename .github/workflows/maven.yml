@@ -16,9 +16,9 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
+    env:
+      JAVA_HOME=$HOME/.sdkman/candidates/java/current
     steps:
     - uses: actions/checkout@v3
     - uses: sdkman/sdkman-action@b1f9b696c79148b66d3d3a06f7ea801820318d0f
@@ -29,7 +29,3 @@ jobs:
     - run: ./mvnw -version
     - name: Build with Maven
       run: ./mvnw clean package -DskipTests
-
-    # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
-    - name: Update dependency graph
-      uses: advanced-security/maven-dependency-submission-action@571e99aab1055c2e71a1e2309b9691de18d6b7d6
