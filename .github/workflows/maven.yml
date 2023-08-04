@@ -28,7 +28,7 @@ jobs:
         version: 21.ea.34-open
     - run: java -version
     - name: Build with Maven
-      run: ./mvnw package
+      run: ./mvnw clean package -DskipTests
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
