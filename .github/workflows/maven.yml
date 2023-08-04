@@ -26,6 +26,9 @@ jobs:
       with:
         candidate: java
         version: 21.ea.34-open
+    - run: sdk ls java
+    - run: which java
+    - run: java -version
     - run: ./mvnw -version
     - name: Build with Maven
       run: ./mvnw clean package -DskipTests
