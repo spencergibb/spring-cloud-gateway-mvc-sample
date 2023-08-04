@@ -22,13 +22,10 @@ import java.util.function.Function;
 import org.springframework.cloud.gateway.server.mvc.common.MvcUtils;
 import org.springframework.context.ApplicationContext;
 import org.springframework.util.Assert;
-import org.springframework.web.servlet.function.HandlerFilterFunction;
-import org.springframework.web.servlet.function.HandlerFunction;
 import org.springframework.web.servlet.function.ServerRequest;
-import org.springframework.web.servlet.function.ServerResponse;
 
 public class HttpbinUriResolver
-		implements Function<ServerRequest, ServerRequest>, HandlerFilterFunction<ServerResponse, ServerResponse> {
+		implements Function<ServerRequest, ServerRequest> {
 
 	protected URI uri(ServerRequest request) {
 		ApplicationContext context = MvcUtils.getApplicationContext(request);
@@ -37,11 +34,6 @@ public class HttpbinUriResolver
 		Assert.hasText(host, "httpbin.host is not set, did you initialize HttpbinTestcontainers?");
 		Assert.notNull(port, "httpbin.port is not set, did you initialize HttpbinTestcontainers?");
 		return URI.create(String.format("http://%s:%d", host, port));
-	}
-
-	@Override
-	public ServerResponse filter(ServerRequest request, HandlerFunction<ServerResponse> next) throws Exception {
-		return next.handle(apply(request));
 	}
 
 	@Override

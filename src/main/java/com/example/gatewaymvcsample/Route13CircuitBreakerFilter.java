@@ -38,11 +38,13 @@ public class Route13CircuitBreakerFilter {
 	@Bean
 	public RouterFunction<ServerResponse> gatewayRouterFunctionsCircuitBreakerNoFallback() {
 		// @formatter:off
-		return route(path("/anything/circuitbreakernofallback"), http())
-				.filter(new HttpbinUriResolver())
+		return route("circuitbreakernofallback")
+				.GET("/anything/circuitbreakernofallback", http())
+				.before(new HttpbinUriResolver())
 				.filter(circuitBreaker("mycb3", null))
 				.filter(setPath("/delay/5"))
-				.withAttribute(MvcUtils.GATEWAY_ROUTE_ID_ATTR, "testcircuitbreakernofallback");
+				.withAttribute(MvcUtils.GATEWAY_ROUTE_ID_ATTR, "testcircuitbreakernofallback")
+				.build();
 		// @formatter:on
 	}
 
