@@ -7,11 +7,10 @@ import org.springframework.web.servlet.function.ServerResponse;
 
 import static org.springframework.cloud.gateway.server.mvc.handler.GatewayRouterFunctions.route;
 import static org.springframework.cloud.gateway.server.mvc.handler.HandlerFunctions.http;
-import static org.springframework.cloud.gateway.server.mvc.predicate.GatewayRequestPredicates.host;
 import static org.springframework.cloud.gateway.server.mvc.predicate.GatewayRequestPredicates.path;
 
 @Configuration(proxyBeanMethods = false)
-public class Route5NestedPredicate {
+public class Route05NestedPredicate {
 
 	// http :8080/anything/nested/nested1
 	// http :8080/anything/nested/nested2

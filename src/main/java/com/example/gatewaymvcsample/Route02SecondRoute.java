@@ -12,7 +12,7 @@ import static org.springframework.web.servlet.function.RequestPredicates.method;
 import static org.springframework.web.servlet.function.RequestPredicates.path;
 
 @Configuration(proxyBeanMethods = false)
-public class Route2SecondRoute {
+public class Route02SecondRoute {
 
 	// http :8080/anything/second
 	@Bean

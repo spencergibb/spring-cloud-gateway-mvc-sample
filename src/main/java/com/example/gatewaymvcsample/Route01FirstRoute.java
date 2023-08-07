@@ -5,20 +5,18 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.function.RouterFunction;
 import org.springframework.web.servlet.function.ServerResponse;
 
-import static org.springframework.cloud.gateway.server.mvc.filter.AfterFilterFunctions.addResponseHeader;
 import static org.springframework.cloud.gateway.server.mvc.handler.GatewayRouterFunctions.route;
 import static org.springframework.cloud.gateway.server.mvc.handler.HandlerFunctions.http;
 
 @Configuration(proxyBeanMethods = false)
-public class Route9AddResponseHeaderFilter {
+public class Route01FirstRoute {
 
-	// http :8080/anything/addresponseheader
+	// http :8080/anything/first
 	@Bean
-	public RouterFunction<ServerResponse> addResponseHeaderRoute() {
-		return route("addresponseheader_route")
-				.GET("/anything/addresponseheader", http())
+	public RouterFunction<ServerResponse> firstRoute() {
+		return route("first_route")
+				.GET("/anything/first", http())
 				.before(new HttpbinUriResolver())
-				.after(addResponseHeader("X-After", "AfterVal"))
 				.build();
 	}
 

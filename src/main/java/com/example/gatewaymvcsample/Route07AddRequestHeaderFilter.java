@@ -10,7 +10,7 @@ import static org.springframework.cloud.gateway.server.mvc.handler.GatewayRouter
 import static org.springframework.cloud.gateway.server.mvc.handler.HandlerFunctions.http;
 
 @Configuration(proxyBeanMethods = false)
-public class Route7AddRequestHeaderFilter {
+public class Route07AddRequestHeaderFilter {
 
 	// http :8080/anything/addrequestheader
 	@Bean

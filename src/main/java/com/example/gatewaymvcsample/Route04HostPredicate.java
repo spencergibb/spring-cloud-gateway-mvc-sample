@@ -8,15 +8,16 @@ import org.springframework.web.servlet.function.ServerResponse;
 import static org.springframework.cloud.gateway.server.mvc.handler.GatewayRouterFunctions.route;
 import static org.springframework.cloud.gateway.server.mvc.handler.HandlerFunctions.http;
 import static org.springframework.cloud.gateway.server.mvc.predicate.GatewayRequestPredicates.header;
+import static org.springframework.cloud.gateway.server.mvc.predicate.GatewayRequestPredicates.host;
 
 @Configuration(proxyBeanMethods = false)
-public class Route3HeaderPredicate {
+public class Route04HostPredicate {
 
-	// http :8080/get X-Foo:bar
+	// http :8080/get Host:www.myhost.org
 	@Bean
-	public RouterFunction<ServerResponse> headerRoute() {
-		return route("header_route")
-				.route(header("X-Foo", "b.r"), http())
+	public RouterFunction<ServerResponse> hostRoute() {
+		return route("host_route")
+				.route(host("**.myhost.org"), http())
 				.before(new HttpbinUriResolver())
 				.build();
 	}
