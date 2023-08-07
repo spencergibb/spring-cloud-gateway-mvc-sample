@@ -14,6 +14,7 @@ import static org.springframework.cloud.gateway.server.mvc.predicate.GatewayRequ
 public class Route5NestedPredicate {
 
 	// http :8080/anything/nested/nested1
+	// http :8080/anything/nested/nested2
 	@Bean
 	public RouterFunction<ServerResponse> nestedRoute() {
 		return route("nested0")

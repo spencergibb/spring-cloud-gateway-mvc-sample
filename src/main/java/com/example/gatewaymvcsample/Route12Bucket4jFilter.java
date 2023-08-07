@@ -21,6 +21,8 @@ import static org.springframework.cloud.gateway.server.mvc.handler.HandlerFuncti
 public class Route12Bucket4jFilter {
 
 	// http -h :8080/anything/ratelimit
+	// execute above twice withing 5 sends and the first should have a 200 status
+	// subsequent should have a 429 (Too Many Requests) status.
 	// https://github.com/bucket4j/bucket4j#bucket4j-distributed-features
 	@Bean
 	public RouterFunction<ServerResponse> ratelimitRoute() {

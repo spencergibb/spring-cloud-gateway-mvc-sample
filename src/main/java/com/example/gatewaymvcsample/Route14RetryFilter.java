@@ -33,7 +33,8 @@ import static org.springframework.web.servlet.function.RequestPredicates.path;
 @Configuration(proxyBeanMethods = false)
 public class Route14RetryFilter {
 
-	// http :8080/retry
+	// http ":8080/retry?key=foo"
+	// search for 'Retry count:' in the logs
 	@Bean
 	public RouterFunction<ServerResponse> gatewayRouterFunctionsRetry() {
 		// @formatter:off

@@ -19,6 +19,7 @@ import static org.springframework.web.servlet.function.RequestPredicates.path;
 public class Route13CircuitBreakerFilter {
 
 	// http :8080/anything/circuitbreakergatewayfallback
+	// see returned "Execution-Exception-*" headers
 	@Bean
 	public RouterFunction<ServerResponse> gatewayRouterFunctionsCircuitBreakerFallbackToGatewayRoute() {
 		// @formatter:off

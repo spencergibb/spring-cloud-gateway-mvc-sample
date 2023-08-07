@@ -32,5 +32,5 @@ public class Route15ConfigRefresh {
 	// http :8080/anything/configroute2
 	// force intellij build after uncommenting configRoute3 in application.yml
 	// http POST :8080/actuator/refresh
-	// http :8080/anything/configroute2
+	// http :8080/anything/configroute3
 }
