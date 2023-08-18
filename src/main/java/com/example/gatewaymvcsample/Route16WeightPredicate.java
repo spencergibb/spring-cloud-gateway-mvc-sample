@@ -12,7 +12,7 @@ import static org.springframework.cloud.gateway.server.mvc.predicate.GatewayRequ
 import static org.springframework.cloud.gateway.server.mvc.predicate.GatewayRequestPredicates.weight;
 
 @Configuration(proxyBeanMethods = false)
-public class Route16WeighPredicate {
+public class Route16WeightPredicate {
 
 	// http :8080/anything/weight
 	// run it multiple times and it should roughly alternate between route1 and route2
