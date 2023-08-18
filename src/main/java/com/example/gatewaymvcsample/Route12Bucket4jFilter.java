@@ -31,7 +31,7 @@ public class Route12Bucket4jFilter {
 				.before(new HttpbinUriResolver())
 				.filter(rateLimit(c -> c.setCapacity(1)
 						.setPeriod(Duration.ofSeconds(5))
-						.setKeyResolver(request -> "ratelimitttest1min")))
+						.setKeyResolver(request -> "ratelimitttest1")))
 				.before(addRequestHeader("X-Test", "ratelimit"))
 				.build();
 	}
