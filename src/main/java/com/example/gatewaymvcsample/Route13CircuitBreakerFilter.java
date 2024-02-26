@@ -42,7 +42,7 @@ public class Route13CircuitBreakerFilter {
 		return route("circuitbreakernofallback")
 				.GET("/anything/circuitbreakernofallback", http())
 				.before(new HttpbinUriResolver())
-				.filter(circuitBreaker("mycb3", null))
+				.filter(circuitBreaker("mycb3"))
 				.filter(setPath("/delay/5"))
 				.withAttribute(MvcUtils.GATEWAY_ROUTE_ID_ATTR, "testcircuitbreakernofallback")
 				.build();
