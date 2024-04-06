@@ -20,12 +20,12 @@ spring:
           - Path=/anything/configroute2
         filters:
           - AddRequestHeader=X-Test,configRoute2
-      configRoute3:
-        uri: lb://httpbin
-        predicates:
-          - Path=/anything/configroute3
-        filters:
-          - AddRequestHeader=X-Test,configRoute3
+#      configRoute3:
+#        uri: lb://httpbin
+#        predicates:
+#          - Path=/anything/configroute3
+#        filters:
+#          - AddRequestHeader=X-Test,configRoute3
 logging:
   level:
     org.springframework.cloud.gateway.server.mvc: TRACE
