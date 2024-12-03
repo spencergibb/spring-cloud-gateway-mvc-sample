@@ -13,3 +13,5 @@ https://github.com/spencergibb/spring-cloud-gateway-mvc-sample/blob/becb979eb175
 or
 
 https://github.com/spencergibb/spring-cloud-gateway-mvc-sample/blob/4db2a6714dcd2ab24e59cfb2637e7d192af34d36/src/main/java/com/example/gatewaymvcsample/Route12Bucket4jFilter.java#L23
+
+Thanks for visiting!
