@@ -23,7 +23,7 @@ jobs:
       uses: actions/setup-java@v4
       with:
         distribution: 'liberica'
-        java-version: '21'
+        java-version: '24'
         cache: 'maven'
     - run: ./mvnw -version
     - name: Build with Maven
