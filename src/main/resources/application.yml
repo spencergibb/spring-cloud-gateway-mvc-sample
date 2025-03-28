@@ -2,30 +2,33 @@ spring:
   threads:
     virtual:
       enabled: true
-  cloud.gateway.mvc:
-    routesMap:
-      configRoute1:
-        uri: lb://httpbin
-        predicates:
-          - Path=/anything/configroute1
-        filters:
-          - name: AddRequestHeader
-            args:
-              name: X-Test
-              values: configRoute1
-      configRoute2:
-        id: route2CustomId
-        uri: lb://httpbin
-        predicates:
-          - Path=/anything/configroute2
-        filters:
-          - AddRequestHeader=X-Test,configRoute2
-#      configRoute3:
-#        uri: lb://httpbin
-#        predicates:
-#          - Path=/anything/configroute3
-#        filters:
-#          - AddRequestHeader=X-Test,configRoute3
+  cloud:
+    gateway.mvc:
+      routesMap:
+        configRoute1:
+          uri: lb://httpbin
+          predicates:
+            - Path=/anything/configroute1
+          filters:
+            - name: AddRequestHeader
+              args:
+                name: X-Test
+                values: configRoute1
+        configRoute2:
+          id: route2CustomId
+          uri: lb://httpbin
+          predicates:
+            - Path=/anything/configroute2
+          filters:
+            - AddRequestHeader=X-Test,configRoute2
+#        configRoute3:
+#          uri: lb://httpbin
+#          predicates:
+#            - Path=/anything/configroute3
+#          filters:
+#            - AddRequestHeader=X-Test,configRoute3
+    function.definition: consumeHello
+    stream.bindings.consumeHello-in-0.destination: hello-out-0
 logging:
   level:
     org.springframework.cloud.gateway.server.mvc: TRACE

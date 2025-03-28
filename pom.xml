@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.3.4</version>
+		<version>3.5.0-SNAPSHOT</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
@@ -14,9 +14,11 @@
 	<name>gatewaymvcsample</name>
 	<description>Demo project for Spring Cloud Gateway MVC</description>
 	<properties>
-		<java.version>21</java.version>
-		<bucket4j.version>8.7.0</bucket4j.version>
-		<spring-cloud.version>2023.0.3</spring-cloud.version>
+		<!-- JEP 491: Synchronize Virtual Threads without Pinning -->
+		<!-- https://openjdk.org/jeps/491 -->
+		<java.version>24</java.version>
+		<bucket4j.version>8.9.0</bucket4j.version>
+		<spring-cloud.version>2025.0.0-SNAPSHOT</spring-cloud.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -29,7 +31,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-gateway-mvc</artifactId>
+			<artifactId>spring-cloud-starter-gateway-server-webmvc</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
@@ -59,6 +61,14 @@
 			<artifactId>spring-retry</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-function-context</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-stream-rabbit</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
@@ -71,6 +81,11 @@
 		<dependency>
 			<groupId>org.testcontainers</groupId>
 			<artifactId>junit-jupiter</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.testcontainers</groupId>
+			<artifactId>rabbitmq</artifactId>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
