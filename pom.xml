@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>gatewaymvcsample</artifactId>
+	<artifactId>gateway-server-webmvc-sample</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>gatewaymvcsample</name>
-	<description>Demo project for Spring Cloud Gateway MVC</description>
+	<name>gateway-server-webmvc-sample</name>
+	<description>Demo project for Spring Cloud Gateway Server WebMVC</description>
 	<properties>
 		<!-- JEP 491: Synchronize Virtual Threads without Pinning -->
 		<!-- https://openjdk.org/jeps/491 -->
