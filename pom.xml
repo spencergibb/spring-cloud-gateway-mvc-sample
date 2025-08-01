@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.5.0-SNAPSHOT</version>
+		<version>4.0.0-SNAPSHOT</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
@@ -17,8 +17,8 @@
 		<!-- JEP 491: Synchronize Virtual Threads without Pinning -->
 		<!-- https://openjdk.org/jeps/491 -->
 		<java.version>24</java.version>
-		<bucket4j.version>8.9.0</bucket4j.version>
-		<spring-cloud.version>2025.0.0-SNAPSHOT</spring-cloud.version>
+		<bucket4j.version>8.14.0</bucket4j.version>
+		<spring-cloud.version>2025.1.0-SNAPSHOT</spring-cloud.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -40,12 +40,12 @@
 		<!-- bucket4j dependencies -->
 		<dependency>
 			<groupId>com.bucket4j</groupId>
-			<artifactId>bucket4j-core</artifactId>
+			<artifactId>bucket4j_jdk17-core</artifactId>
 			<version>${bucket4j.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.bucket4j</groupId>
-			<artifactId>bucket4j-caffeine</artifactId>
+			<artifactId>bucket4j_jdk17-caffeine</artifactId>
 			<version>${bucket4j.version}</version>
 		</dependency>
 		<dependency>

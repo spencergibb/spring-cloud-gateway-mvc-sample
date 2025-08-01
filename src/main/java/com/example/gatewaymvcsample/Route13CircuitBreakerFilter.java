@@ -9,6 +9,7 @@ import org.springframework.web.servlet.function.RouterFunction;
 import org.springframework.web.servlet.function.ServerResponse;
 
 import static org.springframework.cloud.gateway.server.mvc.filter.BeforeFilterFunctions.fallbackHeaders;
+import static org.springframework.cloud.gateway.server.mvc.filter.BeforeFilterFunctions.uri;
 import static org.springframework.cloud.gateway.server.mvc.filter.CircuitBreakerFilterFunctions.circuitBreaker;
 import static org.springframework.cloud.gateway.server.mvc.filter.FilterFunctions.setPath;
 import static org.springframework.cloud.gateway.server.mvc.handler.GatewayRouterFunctions.route;
@@ -24,7 +25,8 @@ public class Route13CircuitBreakerFilter {
 	public RouterFunction<ServerResponse> gatewayRouterFunctionsCircuitBreakerFallbackToGatewayRoute() {
 		// @formatter:off
 		return route("circuitbreakergatewayfallback")
-				.route(path("/anything/circuitbreakergatewayfallback"), http(URI.create("https://nonexistantdomain.com1234")))
+				.route(path("/anything/circuitbreakergatewayfallback"), http())
+				.before(uri("https://nonexistantdomain.com1234"))
 				.filter(circuitBreaker("mycb2", "/anything/gatewayfallback"))
 				.build()
 				.and(route("testgatewayfallback")
