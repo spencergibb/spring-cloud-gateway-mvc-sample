@@ -7,6 +7,7 @@ import org.springframework.boot.test.context.TestConfiguration;
 public class TestGatewayMvcApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.from(GatewayMvcApplication::main).with(HttpbinConfiguration.class, RabbitMQConfiguration.class).run(args);
+		SpringApplication.from(GatewayMvcApplication::main)
+				.with(HttpbinConfiguration.class, RabbitMQConfiguration.class).run(args);
 	}
 }
