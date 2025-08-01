@@ -29,6 +29,12 @@ spring:
 #            - AddRequestHeader=X-Test,configRoute3
     function.definition: consumeHello
     stream.bindings.consumeHello-in-0.destination: hello-out-0
+  mvc:
+    apiversion:
+      required: false
+      default: 1.0.0
+      use:
+        header: X-API-Version
 logging:
   level:
     org.springframework.cloud.gateway.server.mvc: TRACE
@@ -38,3 +44,4 @@ management:
     web:
       exposure:
         include: '*'
+debug: false
