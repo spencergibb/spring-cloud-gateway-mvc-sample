@@ -16,7 +16,7 @@ import static org.springframework.cloud.gateway.server.mvc.handler.HandlerFuncti
 public class Route19FunctionHandler {
 
 	// http POST :8080/fn/upper name=myname
-	// http GET :8080/hi0
+	// http GET :8080/hellosupplier
 	@Bean
 	Function<String, String> upper() {
 		return s -> s.toUpperCase(Locale.ROOT);
@@ -30,11 +30,11 @@ public class Route19FunctionHandler {
 	@Bean
 	public RouterFunction<ServerResponse> gatewayRouterFunctionsSimpleFunction() {
 		// @formatter:off
-		return route("testtemplatedfunction")
+		return route("templatedfunction")
 					.POST("/fn/{fnName}", fn("{fnName}"))
 					.build()
-				.and(route("testsupplierfunction")
-					.GET("/hi", fn("hello"))
+				.and(route("hellosupplierfunction")
+					.GET("/hellosupplier", fn("hello"))
 					.build());
 		// @formatter:on
 	}
