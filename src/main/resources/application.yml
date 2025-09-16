@@ -4,6 +4,7 @@ spring:
       enabled: true
   cloud:
     gateway.server.webmvc:
+      function.enabled: false
       routesMap:
         configRoute1:
           uri: lb://httpbin
